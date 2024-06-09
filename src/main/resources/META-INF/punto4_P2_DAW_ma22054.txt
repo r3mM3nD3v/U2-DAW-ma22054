@@ -1,0 +1,46 @@
+ma22054: Para realizar el punto 4 del parcial "crear un datasource y un pool de conexiones utilizando una de las bases de datos en la nube", hice una nueva base de datos de Cockroach con los siguientes datos:
+
+	username: roman
+	host: parcial2-14981.7tt.aws-us-east-1.cockroachlabs.cloud
+	database: parcial2
+	port: 26257
+	password: MIGaCO-5S6lzlY9itNuhvA
+
+
+Los pasos que seguí para que la aplicación en su versión 1.1 fueron los siguientes:
+1. Crear un JDBC Connection Pool en Jakarta:
+ Resources > JDBC > JDBC Connection Pools.
+ New:
+  Pool Name: CockroachDBPool
+  Resource Type: javax.sql.DataSource
+  Database Vendor: PostgreSQL
+
+2. Configura las propiedades adicionales del pool:
+  User: roman
+  Password: MIGaCO-5S6lzlY9itNuhvA
+  URL: jdbc:postgresql://parcial2-14981.7tt.aws-us-east-1.cockroachlabs.cloud:26257/parcial2
+  Driver Classname: org.postgresql.Driver
+
+3.Crear un JDBC Resource:
+  Resources > JDBC > JDBC Resources.
+  JNDI Name: jdbc/newWebApp
+  Pool Name: CockroachDBPool
+
+4. Hacemos conección con DBeaver de la forma que se explicó en el lab2 y hacemos las diferentes tablas.
+
+NOTA: Al momento de crear la tabla alumnos, lo hice de la forma que se muestra en el documento del laboratorio2:
+
+create table alumnos(
+id serial primary key,
+nombre varchar(50),
+apellido varchar(50),
+carnet varchar(9)
+);
+
+Lo que me generó errores, por las disposiciones hechas en la clase Alumno durante los videos; pero se solventó al crear la secuencia "alumnos_id_seq" en la base de datos con los comandos:
+
+CREATE SEQUENCE alumnos_id_seq;
+ALTER TABLE alumnos ALTER COLUMN id SET DEFAULT nextval('alumnos_id_seq');
+
+
+

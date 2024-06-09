@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>libcode</groupId>
     <artifactId>webApp</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>war</packaging>
-    <name>webApp-1.0</name>
+    <name>webApp-1.1</name>
     
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -30,6 +30,12 @@
             <version>13.0.1</version>
             <classifier>jakarta</classifier>
         </dependency>
+         <!-- Dependencia JDBC para CockroachDB -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.19</version>
+        </dependency>   
     </dependencies>
     
     <build>
