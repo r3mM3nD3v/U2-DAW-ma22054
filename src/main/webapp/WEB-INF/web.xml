@@ -20,7 +20,7 @@
     </servlet-mapping>
     
     <welcome-file-list>
-        <welcome-file>Alumno.xhtml</welcome-file>
+        <welcome-file>Inscripcion.xhtml</welcome-file>
     </welcome-file-list>
     
     <context-param>
