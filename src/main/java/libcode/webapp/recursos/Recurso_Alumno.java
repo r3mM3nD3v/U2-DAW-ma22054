@@ -20,7 +20,7 @@ import libcode.webapp.negocio.DataService;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("/alumnos")
-public class Recurso {
+public class Recurso_Alumno {
     
     @EJB DataService servicio;
     

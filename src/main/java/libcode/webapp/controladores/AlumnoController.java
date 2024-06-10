@@ -12,7 +12,7 @@ import libcode.webapp.negocio.DataService;
 
 @Named
 @RequestScoped
-public class IndexController {
+public class AlumnoController {
     
     private List<Alumno> alumnosList = new ArrayList<>();
     
