@@ -20,7 +20,7 @@
                     <p:outputLabel value="Codigo" style="margin-right: 10px;"/>
                     <p:inputText id="codigo" value="#{materiaController.materia.codigomateria}" style="margin-right: 10px;"/>
                     
-                    <p:commandButton update="tablamaterias materiaForm" value="Guardar" style="margin-right: 10px;" actionListener="#{materiaController.guardarmateria}"/>
+                    <p:commandButton update="tablamaterias materiaForm" value="Guardar" style="margin-right: 10px;" actionListener="#{materiaController.guardarMateria}"/>
                 </h:form>
             </f:view>
         </p:card>
@@ -51,9 +51,9 @@
 
                     <p:column>
                         <f:facet name="header">Opciones</f:facet>
-                        <p:commandButton value="Editar" icon="pi pi-pencil" update="materiaForm" actionListener="#{materiaController.editarmateria(materia)}"/>
+                        <p:commandButton value="Editar" icon="pi pi-pencil" update="materiaForm" actionListener="#{materiaController.editarMateria(materia)}"/>
                         <p:spacer width="10"/>
-                        <p:commandButton value="Eliminar" icon="pi pi-trash" style="background: red" update="tablamaterias" actionListener="#{materiaController.eliminarmateria(materia)}">
+                        <p:commandButton value="Eliminar" icon="pi pi-trash" style="background: red" update="tablamaterias" actionListener="#{materiaController.eliminarMateria(materia)}">
                             <p:confirm header="Confirmar"  message="¿Realmente desea eliminar al materia: #{materia.materia}?" icon="pi pi-info-circle"/>
                         </p:commandButton>
                     </p:column>

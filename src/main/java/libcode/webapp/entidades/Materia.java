@@ -15,8 +15,8 @@ import java.io.Serializable;
 public class Materia implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "materia_id_seq")
-    @SequenceGenerator(name = "materia_id_seq", sequenceName = "materia_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "materias_id_seq")
+    @SequenceGenerator(name = "materias_id_seq", sequenceName = "materias_id_seq", allocationSize = 1)
     
     @Column(name = "id")
     private Integer id;

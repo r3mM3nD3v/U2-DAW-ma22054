@@ -39,8 +39,19 @@ public class MateriaController {
     public void setMateria(Materia materia) {
         this.materia = materia;
     }
+    //CRUD 
     
-    public void llenarFormEditar(Materia materia)
+    public void guardarMateria() {
+        if(materia.getId()!=null){
+            servicio.editMateria(materia);
+        }else{
+            servicio.saveMateria(materia);
+        }               
+        materia = new Materia();
+        cargarMaterias();
+    }
+    
+    public void editarMateria(Materia materia)
     {
         this.materia.setId(materia.getId());
         this.materia.setMateria(materia.getMateria());
