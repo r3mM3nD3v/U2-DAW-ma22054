@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-   version="6.0">
-   
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
-    
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+    <context-param>
+        <param-name>jakarta.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
     <servlet>
         <servlet-name>JSF</servlet-name>
         <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>JSF</servlet-name>
-        <url-pattern>*.xhtml</url-pattern>
+        <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
-    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
     <welcome-file-list>
-        <welcome-file>Materia.xhtml</welcome-file>
+        <welcome-file>faces/Alumno.xhtml</welcome-file>
     </welcome-file-list>
-    
     <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>arya</param-value>
     </context-param>
-
-    <!-- MIME type mappings -->
+    <!-- Asignaciones de tipo MIME para primeicons -->
     <mime-mapping>
         <extension>eot</extension>
         <mime-type>application/vnd.ms-fontobject</mime-type>
@@ -41,10 +36,11 @@
     </mime-mapping>
     <mime-mapping>
         <extension>woff</extension>
-        <mime-type>application/font-woff</mime-type>
+        <mime-type>font/woff</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>ttf</extension>
         <mime-type>application/x-font-ttf</mime-type>
     </mime-mapping>
 </web-app>
+

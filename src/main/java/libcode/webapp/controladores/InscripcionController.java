@@ -27,7 +27,7 @@ public class InscripcionController {
     
     // CRUD de la pagina
     
-    public void guardarAlumno(){
+    public void guardarInscripcion(){
         if(inscripcion.getId()!=null){
             servicio.editInscripcion(inscripcion);
         }else{

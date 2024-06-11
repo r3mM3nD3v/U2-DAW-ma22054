@@ -5,10 +5,22 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-          <title>Practica 2: CRUD Escuela</title>
+          <title>Practica 2: CRUD Materia </title>
     </h:head>
     <h:body>
-        <p:card style="margin:5% 5% 5% 5%">
+        
+        <p:card style="margin: 5%; text-align: center; padding: 20px">
+            <h:form>
+                <h1>Menú</h1>
+                <p:commandButton style="font-weight: 700;" value="Alumnos" action="Alumno.xhtml"/>
+                <p:spacer width="10" />
+                <p:commandButton style="font-weight: 700;" value="Materias" action="Materia.xhtml"/>
+                <p:spacer width="10" />                
+                <p:commandButton style="font-weight: 700;" value="Inscripciones" action="Inscripcion.xhtml"/>
+            </h:form>
+        </p:card>
+        
+        <p:card style="margin:5%;">
             <f:facet name="title">Formulario de materia</f:facet>
             <f:view>
                 <h:form id="materiaForm">
@@ -24,7 +36,7 @@
                 </h:form>
             </f:view>
         </p:card>
-        <p:card style="margin:5% 5% 5% 5%">
+        <p:card style="margin:5%;">
         <h1>Listado de materias</h1>
             <h:form id="tablamaterias">
                 <p:dataTable rows="5" paginator="true" paginatorPosition="bottom"
