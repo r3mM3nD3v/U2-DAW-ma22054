@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package libcode.webapp.controladores;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
@@ -11,10 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import libcode.webapp.entidades.Materia;
 import libcode.webapp.negocio.DataService;
-/**
- *
- * @author Gabo
- */
+
 @Named
 @RequestScoped
 public class MateriaController {
@@ -49,9 +43,9 @@ public class MateriaController {
     public void llenarFormEditar(Materia materia)
     {
         this.materia.setId(materia.getId());
-        this.materia.setNombre(materia.getNombre());
+        this.materia.setMateria(materia.getMateria());
         this.materia.setDescripcion(materia.getDescripcion());
-        this.materia.setCodigo(materia.getCodigo());
+        this.materia.setCodigomateria(materia.getCodigomateria());
     }
     
     public void eliminarMateria(Materia materia)

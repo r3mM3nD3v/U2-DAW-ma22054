@@ -21,20 +21,20 @@ public class Materia implements Serializable {
     @Column(name = "id")
     private Integer id;
    
-    @Column(name = "nombre")
-    private String nombre;
+    @Column(name = "materia")
+    private String materia;
     
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "codigo")
-    private String codigo;
+    @Column(name = "codigomateria")
+    private String codigomateria;
 
-    public Materia(Integer id, String nombre, String descripcion, String codigo) {
+    public Materia(Integer id, String materia, String descripcion, String codigomateria) {
         this.id = id;
-        this.nombre = nombre;
+        this.materia = materia;
         this.descripcion = descripcion;
-        this.codigo = codigo;
+        this.codigomateria = codigomateria;
     }
 
     public Materia(Integer id) {
@@ -45,14 +45,14 @@ public class Materia implements Serializable {
         
     }
     
-    public Materia(Integer id, String nombre) {
+    public Materia(Integer id, String materia) {
         this.id = id;
-        this.nombre = nombre;
+        this.materia = materia;
     }
 
     @Override
     public String toString() {
-        return "Materia{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", codigo=" + codigo + '}';
+        return "Materia{" + "id=" + id + ", materia=" + materia + ", descripcion=" + descripcion + ", codigomateria=" + codigomateria + '}';
     }
 
     @Override
@@ -85,12 +85,12 @@ public class Materia implements Serializable {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getMateria() {
+        return materia;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 
     public String getDescripcion() {
@@ -101,11 +101,11 @@ public class Materia implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getCodigomateria() {
+        return codigomateria;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCodigomateria(String codigomateria) {
+        this.codigomateria = codigomateria;
     }
 }
