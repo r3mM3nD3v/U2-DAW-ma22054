@@ -15,9 +15,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.List;
-import libcode.webapp.negocio.DataService;
 import libcode.webapp.entidades.Materia;
-import libcode.webapp.negocio.DataServicematerias;
+import libcode.webapp.negocio.DataService;
 /**
  *
  * @author Gabo
@@ -25,8 +24,8 @@ import libcode.webapp.negocio.DataServicematerias;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("/materias")
-public class RecursoMateria {
-    @EJB DataServicematerias servicio;
+public class Recurso_Materia {
+    @EJB DataService servicio;
     
     @GET
     public Response getMaterias()

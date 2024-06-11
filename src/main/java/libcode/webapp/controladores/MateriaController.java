@@ -10,7 +10,7 @@ import jakarta.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 import libcode.webapp.entidades.Materia;
-import libcode.webapp.negocio.DataServicematerias;
+import libcode.webapp.negocio.DataService;
 /**
  *
  * @author Gabo
@@ -23,7 +23,7 @@ public class MateriaController {
     
     
     @EJB
-    DataServicematerias servicio;
+    DataService servicio;
     
     @PostConstruct
     public void cargarMaterias() {

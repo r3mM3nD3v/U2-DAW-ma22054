@@ -10,6 +10,7 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import libcode.webapp.entidades.Alumno;
 import libcode.webapp.entidades.Inscripcion;
+import libcode.webapp.entidades.Materia;
 
 @Stateless            
 public class DataService {
@@ -43,6 +44,33 @@ public class DataService {
     public void deleteAlumno(Alumno alumno){
         Alumno alumnoEliminar = entityManager.find(Alumno.class, alumno.getId());
         entityManager.remove(alumnoEliminar);
+    }
+    
+    
+    //Materias
+    public List<Materia> getMaterias(){
+        
+        Query query = entityManager.createQuery("SELECT e FROM Materia e ORDER BY e.id DESC");
+        
+        List<Materia> Materia = query.getResultList();
+        
+        return Materia;
+    }
+    
+    @Transactional
+    public void saveMateria(Materia Materia){
+        entityManager.persist(Materia);
+    }
+    
+    @Transactional
+    public void editMateria(Materia Materia){
+        entityManager.merge(Materia);
+    }
+    
+    @Transactional
+    public void deleteMateria(Materia Materia){
+        Materia MateriaEliminar = entityManager.find(Materia.class, Materia.getId());
+        entityManager.remove(MateriaEliminar);
     }
     
     //Inscripciones
